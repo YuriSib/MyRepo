@@ -234,7 +234,6 @@ class Game:
 
                 for x in r_b:
                     count_ += x.count("■")
-                print(count_)
                 for j in r_b:
                     count_contur += j.count(".")
                 if count_contur > 25:
@@ -243,18 +242,8 @@ class Game:
                 break
 
     def random_board(self, hid):
-        board = None
-        while board is None:
-            board = self.random_place(hid)
-        return board
-
-    def random_place(self, hid):
         rand_board = Board(hid)
-        counter_it = 0
         while True:
-            counter_it += 1
-            if counter_it > 2000:
-                return None
             self.rand_b_func(1, 3, 3, rand_board.map_, rand_board)
             self.rand_b_func(2, 4, 2, rand_board.map_, rand_board)
             self.rand_b_func(4, 5, 1, rand_board.map_, rand_board)
